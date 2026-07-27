@@ -21,9 +21,11 @@ export const academy = {
   },
 
   contact: {
-    phone: "",
+    phone: "+254702337575",
+
     email: "",
-    whatsapp: "",
+
+    whatsapp: "+254702337575",
   },
 
   payment: {
