@@ -37,6 +37,6 @@ export const siteConfig = {
       name: academy.name,
     },
   ],
-} as const;
+}
 
 export type SiteConfig = typeof siteConfig;
