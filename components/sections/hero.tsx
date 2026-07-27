@@ -1,92 +1,58 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { H1, Lead } from "@/components/ui/typography";
+import { Section } from "@/components/ui/section";
+import { Badge } from "@/components/ui/badge";
+import { CTA } from "@/components/ui/cta";
+import { Stat } from "@/components/ui/stats";
+import { HeroImage } from "./hero-image";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50 to-amber-50">
-      <Container className="grid min-h-[calc(100vh-80px)] items-center gap-16 py-16 lg:grid-cols-2 lg:py-24">
-        {/* Left */}
-        <div>
-          <span className="inline-flex rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700">
-            ABRSM • Online & Physical Lessons
-          </span>
+    <Section className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50 to-amber-50">
+      <Container>
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          <div>
+            <Badge className="mb-8">
+              ABRSM • Online & Physical Lessons
+            </Badge>
 
-          <H1 className="mt-8">
-            Nurturing Musical Excellence
-          </H1>
+            <h1 className="max-w-xl text-5xl font-bold leading-tight text-slate-900 md:text-7xl">
+              Nurturing Musical Excellence
+            </h1>
 
-          <Lead className="mt-6 max-w-xl">
-            Join Grace Muigai Music Academy and build confidence,
-            creativity, and musical excellence through structured,
-            practical music education.
-          </Lead>
+            <p className="mt-8 max-w-xl text-xl leading-relaxed text-slate-600">
+              Join Grace Muigai Music Academy and build confidence,
+              creativity, and musical excellence through structured,
+              practical music education.
+            </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Button size="lg">
-              Book a Lesson
-            </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-            >
-              Explore Courses
-            </Button>
-          </div>
-
-          <div className="mt-12 grid grid-cols-3 gap-6">
-            <div>
-              <h3 className="text-3xl font-bold text-emerald-700">
-                6
-              </h3>
-
-              <p className="text-sm text-slate-600">
-                Grade Levels
-              </p>
+            <div className="mt-10">
+              <CTA
+                primary="Book a Lesson"
+                secondary="Explore Courses"
+              />
             </div>
 
-            <div>
-              <h3 className="text-3xl font-bold text-emerald-700">
-                100%
-              </h3>
+            <div className="mt-16 grid grid-cols-3 gap-8">
+              <Stat
+                value="6"
+                label="Grade Levels"
+              />
 
-              <p className="text-sm text-slate-600">
-                Practical Learning
-              </p>
-            </div>
+              <Stat
+                value="100%"
+                label="Practical Learning"
+              />
 
-            <div>
-              <h3 className="text-3xl font-bold text-emerald-700">
-                ABRSM
-              </h3>
-
-              <p className="text-sm text-slate-600">
-                Curriculum
-              </p>
+              <Stat
+                value="ABRSM"
+                label="Curriculum"
+              />
             </div>
           </div>
-        </div>
 
-        {/* Right */}
-        <div className="relative">
-          <div className="absolute -left-8 -top-8 h-32 w-32 rounded-full bg-amber-300/30 blur-3xl" />
-
-          <div className="absolute -bottom-8 -right-8 h-40 w-40 rounded-full bg-emerald-300/30 blur-3xl" />
-
-          <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-            <Image
-              src="/images/hero-piano.jpg"
-              alt="Grace Muigai Music Academy"
-              width={700}
-              height={800}
-              priority
-              className="h-auto w-full object-cover"
-            />
-          </div>
+          <HeroImage />
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
